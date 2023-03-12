@@ -27,7 +27,7 @@ const MenuListItem: FC<MenuListItemProps> = ({ href, icon, children, selected = 
   </MenuItem>
 )
 
-const MainLayout = () => {
+const MainLayout: FC = () => {
   const { pathname } = useLocation()
 
   return (

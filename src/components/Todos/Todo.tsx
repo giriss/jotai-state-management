@@ -14,7 +14,7 @@ import { type Todo as TodoEntity, todosAtom } from "@/atoms"
 const Todo: FC<TodoEntity> = ({ id, title, description, isCompleted }) => {
   const setTodos = useSetAtom(todosAtom)
   const toggleComplete = useCallback(
-    () => setTodos((todosDraft: TodoEntity[]) => {
+    () => setTodos(todosDraft => {
       const todo = todosDraft.find(todo => todo.id === id)
       if (!todo) return
 
@@ -24,7 +24,7 @@ const Todo: FC<TodoEntity> = ({ id, title, description, isCompleted }) => {
   )
   const deleteTodo = useCallback(
     () => setTodos(
-      (todosDraft: TodoEntity[]) => todosDraft.filter(todo => todo.id !== id)
+      todosDraft => todosDraft.filter(todo => todo.id !== id)
     ),
     [id]
   )

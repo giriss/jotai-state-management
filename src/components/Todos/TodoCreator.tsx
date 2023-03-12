@@ -2,8 +2,8 @@ import { Button, Stack, TextField } from "@mui/material"
 import { useSetAtom } from "jotai"
 import { nanoid } from "nanoid"
 import { useCallback, useState } from "preact/hooks"
-import { Todo, todosAtom } from "../../atoms"
-import { FormSubmitEvent, FieldChangeEvent } from "../../lib/types"
+import { Todo, todosAtom } from "@/atoms"
+import { FormSubmitEvent, FieldChangeEvent } from "@/lib/types"
 
 const TodoCreator = () => {
   const setTodos = useSetAtom(todosAtom)

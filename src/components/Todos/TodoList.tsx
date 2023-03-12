@@ -1,6 +1,6 @@
 import { List } from "@mui/material"
 import { useAtomValue } from "jotai"
-import { todosAtom } from "../../atoms"
+import { todosAtom } from "@/atoms"
 import Todo from "./Todo"
 
 const TodoList = () => {

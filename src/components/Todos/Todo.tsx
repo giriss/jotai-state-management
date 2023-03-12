@@ -9,7 +9,7 @@ import {
 } from "@mui/material"
 import { useSetAtom } from "jotai"
 import { type FC, useCallback } from "preact/compat"
-import { todosAtom, type Todo as TodoEntity } from "../../atoms"
+import { type Todo as TodoEntity, todosAtom } from "@/atoms"
 
 const Todo: FC<TodoEntity> = ({ id, title, description, isCompleted }) => {
   const setTodos = useSetAtom(todosAtom)

@@ -7,7 +7,7 @@ import Grid from '@mui/material/Grid'
 import ListItemText from '@mui/material/ListItemText'
 import Typography from '@mui/material/Typography'
 import { Outlet, Link, useLocation } from "react-router-dom"
-import { FC } from "preact/compat"
+import { type FC } from "preact/compat"
 
 interface MenuListItemProps {
   href: string

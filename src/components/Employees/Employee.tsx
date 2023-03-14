@@ -2,10 +2,11 @@ import { type Employee, employeesAtom } from "@/atoms"
 import { MONTHS } from "@/lib/types"
 import { Avatar, Card, CardActions, CardContent, CardHeader, Icon, IconButton, Typography } from "@mui/material"
 import { useSetAtom } from "jotai"
+import { memo } from "preact/compat"
 import { type FC, useMemo, useCallback } from "preact/compat"
 import EmployeeDropdown from "./EmployeeDropdown"
 
-const Employee: FC<Employee> = ({ id, name, dob, gender, isFavorite }) => {
+const Employee: FC<Employee> = memo(({ id, name, dob, gender, isFavorite }) => {
   const setEmployees = useSetAtom(employeesAtom)
   const initial = useMemo(() => name[0], [name[0]])
   const avatarColor = useMemo(
@@ -50,6 +51,6 @@ const Employee: FC<Employee> = ({ id, name, dob, gender, isFavorite }) => {
       </CardActions>
     </Card>
   )
-}
+})
 
 export default Employee

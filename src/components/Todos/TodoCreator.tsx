@@ -4,8 +4,9 @@ import { nanoid } from "nanoid"
 import { useCallback, useState } from "preact/hooks"
 import { Todo, todosAtom } from "@/atoms"
 import { FormSubmitEvent, FieldChangeEvent } from "@/lib/types"
+import { memo } from "preact/compat"
 
-const TodoCreator = () => {
+const TodoCreator = memo(() => {
   const setTodos = useSetAtom(todosAtom)
   const [value, setValue] = useState('')
   const valueChanged = useCallback((event: FieldChangeEvent) => {
@@ -41,6 +42,6 @@ const TodoCreator = () => {
       </Stack>
     </form>
   )
-}
+})
 
 export default TodoCreator

@@ -10,8 +10,9 @@ import {
 import { useSetAtom } from "jotai"
 import { type FC, useCallback } from "preact/compat"
 import { type Todo as TodoEntity, todosAtom } from "@/atoms"
+import { memo } from "preact/compat"
 
-const Todo: FC<TodoEntity> = ({ id, title, description, isCompleted }) => {
+const Todo: FC<TodoEntity> = memo(({ id, title, description, isCompleted }) => {
   const setTodos = useSetAtom(todosAtom)
   const toggleComplete = useCallback(
     () => setTodos(todosDraft => {
@@ -46,6 +47,6 @@ const Todo: FC<TodoEntity> = ({ id, title, description, isCompleted }) => {
       </ListItemButton>
     </ListItem>
   )
-}
+})
 
 export default Todo
